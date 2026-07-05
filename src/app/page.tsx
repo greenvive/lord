@@ -6,9 +6,23 @@ import PortfolioCard from "@/components/PortfolioCard";
 import FaqAccordion from "@/components/FaqAccordion";
 import CtaBanner from "@/components/CtaBanner";
 import JsonLdScript from "@/components/JsonLdScript";
+import HeroSlideshow from "@/components/HeroSlideshow";
 import { breadcrumbJsonLd, faqJsonLd } from "@/lib/jsonld";
 import { portfolioSamples } from "@/lib/content/portfolio";
 import { site } from "@/lib/site";
+import { withBasePath } from "@/lib/base-path";
+
+const heroSlides = [
+  { src: withBasePath("/images/hero/01-outdoor-festival-stage-lake-park.jpg"), alt: "광교호수공원 야외 음악 축제 무대 설치" },
+  { src: withBasePath("/images/hero/02-outdoor-amphitheater-night-concert.jpg"), alt: "야외 음악당 야간 공연 무대와 LED 스크린" },
+  { src: withBasePath("/images/hero/03-indoor-cathedral-concert-stage.jpg"), alt: "성당 실내 공연 무대 조명 연출" },
+  { src: withBasePath("/images/hero/04-outdoor-festival-stage-music-festival.jpg"), alt: "가요제 야외 축제 무대 LED 사인물" },
+  { src: withBasePath("/images/hero/06-custom-photozone-backdrop-gate.jpg"), alt: "행사장 맞춤 제작 포토존 백드롭" },
+  { src: withBasePath("/images/hero/07-corporate-event-branded-backdrop.jpg"), alt: "기업행사 브랜드 백월 설치" },
+  { src: withBasePath("/images/hero/08-outdoor-festival-stage-truss-led.jpg"), alt: "축제 야외무대 트러스 LED 설치" },
+  { src: withBasePath("/images/hero/09-illustrated-photozone-backdrop.jpg"), alt: "포토존 백드롭과 레드카펫 설치" },
+  { src: withBasePath("/images/hero/10-ceremony-stage-led-screen.jpg"), alt: "기념식 무대 LED 스크린 설치" },
+];
 
 export const metadata: Metadata = {
   title: "무대 설치·포토존 제작·음향 조명 LED 렌탈 전문",
@@ -63,9 +77,10 @@ export default function Home() {
       <JsonLdScript data={[breadcrumbJsonLd(breadcrumb), faqJsonLd(faq)]} />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-lord-black px-5 pb-24 pt-16 text-white">
+      <section className="relative isolate overflow-hidden px-5 pb-24 pt-16 text-white">
+        <HeroSlideshow slides={heroSlides} />
         <div
-          className="pointer-events-none absolute -top-40 left-1/2 h-[560px] w-[1100px] -translate-x-1/2 rounded-full opacity-30 blur-3xl"
+          className="pointer-events-none absolute -top-40 left-1/2 h-[560px] w-[1100px] -translate-x-1/2 rounded-full opacity-40 blur-3xl"
           style={{ background: "radial-gradient(circle, #FF6A00 0%, transparent 70%)" }}
           aria-hidden
         />
@@ -73,12 +88,12 @@ export default function Home() {
           <p className="font-en text-sm font-bold tracking-widest text-lord-orange-light">
             STAGE · PHOTOZONE · SOUND · LIGHT · LED · TRUSS
           </p>
-          <h1 className="hero-title mx-auto mt-6 max-w-4xl">
+          <h1 className="hero-title mx-auto mt-6 max-w-4xl [text-shadow:0_4px_24px_rgba(0,0,0,0.45)]">
             무대부터 포토존, 음향·조명·LED까지
             <br />
             행사 공간을 완성하는 <span className="text-lord-orange">LORD</span>
           </h1>
-          <p className="mx-auto mt-8 max-w-2xl text-lg text-white/80">
+          <p className="mx-auto mt-8 max-w-2xl text-lg text-white/90 [text-shadow:0_2px_12px_rgba(0,0,0,0.5)]">
             LORD는 행사 무대 설치·렌탈, 포토존 제작·렌탈, 음향·조명·LED 전광판·트러스 시스템을 통합 제공하는
             행사 공간 설치 전문 업체입니다. 기업행사, 공공행사, 축제, 공연, 기념식, 체육대회 등 행사 목적에
             맞춰 기획, 제작, 설치, 운영, 철거까지 지원합니다.
