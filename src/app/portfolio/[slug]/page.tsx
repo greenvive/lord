@@ -1,20 +1,15 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageHero from "@/components/PageHero";
-import FaqAccordion from "@/components/FaqAccordion";
+import GalleryViewer from "@/components/GalleryViewer";
 import CtaBanner from "@/components/CtaBanner";
 import JsonLdScript from "@/components/JsonLdScript";
-import { breadcrumbJsonLd, articleJsonLd, serviceJsonLd, faqJsonLd } from "@/lib/jsonld";
-import { portfolioDetails, getPortfolioBySlug } from "@/lib/content/portfolio";
+import { breadcrumbJsonLd, articleJsonLd } from "@/lib/jsonld";
+import { portfolioItems, getPortfolioBySlug } from "@/lib/content/portfolio";
 import { withBasePath } from "@/lib/base-path";
 
-function SectionHeading({ children }: { children: React.ReactNode }) {
-  return <h2 className="text-2xl font-extrabold text-lord-black sm:text-3xl">{children}</h2>;
-}
-
 export function generateStaticParams() {
-  return portfolioDetails.map((item) => ({ slug: item.slug }));
+  return portfolioItems.map((item) => ({ slug: item.slug }));
 }
 
 export async function generateMetadata({
@@ -26,8 +21,8 @@ export async function generateMetadata({
   const item = getPortfolioBySlug(slug);
   if (!item) return {};
   return {
-    title: item.metaTitle.replace(" | LORD", ""),
-    description: item.metaDescription,
+    title: `${item.title} 시공 사례`,
+    description: `${item.region}에서 진행된 ${item.title}(${item.category}) 설치 사례 현장 사진입니다. 장소: ${item.place}, 일자: ${item.date}, 주최·주관: ${item.organizer}.`,
     alternates: { canonical: `/portfolio/${item.slug}` },
   };
 }
@@ -52,128 +47,37 @@ export default async function PortfolioDetailPage({
       <JsonLdScript
         data={[
           breadcrumbJsonLd(breadcrumb),
-          articleJsonLd({ headline: item.metaTitle, description: item.metaDescription, url: `/portfolio/${item.slug}` }),
-          serviceJsonLd({ name: item.eventType, description: item.metaDescription, url: `/portfolio/${item.slug}` }),
-          faqJsonLd(item.faq),
+          articleJsonLd({
+            headline: item.title,
+            description: item.imageAlt,
+            url: `/portfolio/${item.slug}`,
+          }),
         ]}
       />
 
       <PageHero
         breadcrumb={breadcrumb}
         h1={item.title}
-        aiSummary={item.overview}
-        heroImageAlt={`${item.region} ${item.eventType} 설치 사례 — ${item.items}`}
-        heroImage={withBasePath("/images/hero/portfolio.jpg")}
+        aiSummary={`${item.region} ${item.place}에서 진행된 ${item.category} 행사입니다. 주최·주관: ${item.organizer} / 일자: ${item.date}.`}
+        heroImageAlt={item.imageAlt}
+        heroImage={withBasePath(item.image)}
       />
 
       <section className="px-5 py-16">
-        <div className="mx-auto max-w-4xl space-y-16">
-          <div>
-            <SectionHeading>프로젝트 개요</SectionHeading>
-            <div className="mt-6 overflow-hidden rounded-2xl border border-black/10">
-              <table className="w-full text-left text-sm">
-                <tbody>
-                  <Row label="행사 종류" value={item.eventType} />
-                  <Row label="설치 지역" value={item.region} />
-                  <Row label="행사 장소" value={item.venue} />
-                  <Row label="참석 규모" value={item.attendees} />
-                  <Row label="설치 품목" value={item.items} />
-                  <Row label="규모" value={item.scale} />
-                  <Row label="설치 시간" value={item.installTime} />
-                  <Row label="운영 범위" value={item.operationScope} />
-                  <Row label="해결 과제" value={item.challenge} />
-                </tbody>
-              </table>
-            </div>
+        <div className="mx-auto max-w-4xl space-y-10">
+          <div className="grid gap-4 rounded-2xl border border-black/10 bg-lord-cream/60 px-6 py-5 text-sm sm:grid-cols-2 lg:grid-cols-3">
+            <p><span className="font-bold text-lord-black">행사유형</span> {item.category}</p>
+            <p><span className="font-bold text-lord-black">장소</span> {item.place}</p>
+            <p><span className="font-bold text-lord-black">일자</span> {item.date}</p>
+            <p><span className="font-bold text-lord-black">지역</span> {item.region}</p>
+            <p><span className="font-bold text-lord-black">주최·주관</span> {item.organizer}</p>
           </div>
 
           <div>
-            <SectionHeading>고객 요청사항</SectionHeading>
-            <p className="body-copy mt-4">{item.clientRequest}</p>
-          </div>
-
-          <div>
-            <SectionHeading>현장 조건</SectionHeading>
-            <p className="body-copy mt-4">{item.siteConditions}</p>
-          </div>
-
-          <div>
-            <SectionHeading>LORD 제안 구성</SectionHeading>
-            <ul className="body-copy mt-6 list-disc space-y-2 pl-5">
-              {item.proposedConfig.map((line) => (
-                <li key={line}>{line}</li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <SectionHeading>설치 장비와 규격</SectionHeading>
-            <div className="mt-6 overflow-hidden rounded-2xl border border-black/10">
-              <table className="w-full text-left text-sm">
-                <tbody>
-                  {item.equipmentSpecs.map((spec, index) => (
-                    <tr key={spec.item} className={index % 2 === 0 ? "bg-lord-cream/60" : "bg-white"}>
-                      <th scope="row" className="w-1/3 px-5 py-3 font-bold text-lord-black">{spec.item}</th>
-                      <td className="px-5 py-3 text-[#4a4a4a]">{spec.spec}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <div>
-            <SectionHeading>설치 과정</SectionHeading>
-            <ol className="mt-6 grid gap-3 sm:grid-cols-2">
-              {item.processSteps.map((step, index) => (
-                <li key={step} className="flex items-start gap-3 rounded-xl border border-black/10 px-5 py-4">
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-lord-orange text-xs font-extrabold text-white">
-                    {index + 1}
-                  </span>
-                  <span className="body-copy text-sm">{step}</span>
-                </li>
-              ))}
-            </ol>
-          </div>
-
-          <div>
-            <SectionHeading>완성 이미지</SectionHeading>
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              {[1, 2].map((n) => (
-                <div
-                  key={n}
-                  className="flex h-56 items-center justify-center rounded-2xl border border-black/10 bg-lord-cream text-xs text-black/40"
-                >
-                  완성 시공 이미지 영역 {n} — {item.title}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <SectionHeading>비슷한 행사 추천 구성</SectionHeading>
-            <p className="body-copy mt-4">{item.similarRecommendation}</p>
-          </div>
-
-          <div>
-            <SectionHeading>자주 묻는 질문</SectionHeading>
+            <h2 className="text-2xl font-extrabold text-lord-black sm:text-3xl">현장 사진</h2>
+            <p className="body-copy mt-3 text-sm">좌우 버튼을 눌러 현장 사진을 넘겨 볼 수 있습니다.</p>
             <div className="mt-6">
-              <FaqAccordion items={item.faq} />
-            </div>
-          </div>
-
-          <div>
-            <SectionHeading>관련 페이지</SectionHeading>
-            <div className="mt-6 flex flex-wrap gap-3">
-              {item.relatedLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="rounded-full border border-black/15 px-5 py-2 text-sm font-bold text-lord-black hover:border-lord-orange hover:text-lord-orange"
-                >
-                  {link.label}
-                </Link>
-              ))}
+              <GalleryViewer images={item.images} />
             </div>
           </div>
         </div>
@@ -181,14 +85,5 @@ export default async function PortfolioDetailPage({
 
       <CtaBanner />
     </>
-  );
-}
-
-function Row({ label, value }: { label: string; value: string }) {
-  return (
-    <tr className="even:bg-white odd:bg-lord-cream/60">
-      <th scope="row" className="w-1/3 px-5 py-3 font-bold text-lord-black">{label}</th>
-      <td className="px-5 py-3 text-[#4a4a4a]">{value}</td>
-    </tr>
   );
 }

@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
-import { portfolioDetails } from "@/lib/content/portfolio";
+import { portfolioItems } from "@/lib/content/portfolio";
 
 export const dynamic = "force-static";
 
@@ -40,7 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: path === "" ? 1 : 0.7,
   }));
 
-  const portfolioEntries = portfolioDetails.map((item) => ({
+  const portfolioEntries = portfolioItems.map((item) => ({
     url: `${site.url}/portfolio/${item.slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,

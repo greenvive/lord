@@ -9,7 +9,7 @@ import JsonLdScript from "@/components/JsonLdScript";
 import HeroSlideshow from "@/components/HeroSlideshow";
 import SectionBackgroundImage from "@/components/SectionBackgroundImage";
 import { breadcrumbJsonLd, faqJsonLd } from "@/lib/jsonld";
-import { portfolioSamples } from "@/lib/content/portfolio";
+import { portfolioItems } from "@/lib/content/portfolio";
 import { site } from "@/lib/site";
 import { withBasePath } from "@/lib/base-path";
 
@@ -160,7 +160,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <h2 className="text-center text-2xl font-extrabold text-lord-black sm:text-3xl">대표 포트폴리오</h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {portfolioSamples.slice(0, 4).map((item) => (
+            {portfolioItems.slice(0, 4).map((item) => (
               <PortfolioCard key={item.slug} item={item} />
             ))}
           </div>

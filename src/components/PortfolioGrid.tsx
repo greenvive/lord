@@ -1,18 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import PortfolioCard from "@/components/PortfolioCard";
-import { portfolioFilters, type PortfolioDetail, type PortfolioCategory } from "@/lib/types";
+import type { PortfolioItem } from "@/lib/types";
 
-export default function PortfolioGrid({ items }: { items: PortfolioDetail[] }) {
-  const [active, setActive] = useState<PortfolioCategory | "all">("all");
+export default function PortfolioGrid({ items }: { items: PortfolioItem[] }) {
+  const [active, setActive] = useState<string>("all");
 
-  const filtered = active === "all" ? items : items.filter((item) => item.categories.includes(active));
+  const categories = useMemo(() => {
+    const unique = Array.from(new Set(items.map((item) => item.category)));
+    return [{ label: "전체", value: "all" }, ...unique.map((value) => ({ label: value, value }))];
+  }, [items]);
+
+  const filtered = active === "all" ? items : items.filter((item) => item.category === active);
 
   return (
     <div>
       <div className="flex flex-wrap gap-2">
-        {portfolioFilters.map((filter) => (
+        {categories.map((filter) => (
           <button
             key={filter.value}
             onClick={() => setActive(filter.value)}

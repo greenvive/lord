@@ -5,7 +5,7 @@ import SectionTable from "@/components/SectionTable";
 import FaqAccordion from "@/components/FaqAccordion";
 import CtaBanner from "@/components/CtaBanner";
 import PortfolioCard from "@/components/PortfolioCard";
-import { portfolioSamples } from "@/lib/content/portfolio";
+import { portfolioItems } from "@/lib/content/portfolio";
 import { withBasePath } from "@/lib/base-path";
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
@@ -92,7 +92,7 @@ export default function ServicePageTemplate({ content }: { content: ServicePageC
           <div>
             <SectionHeading>관련 포트폴리오</SectionHeading>
             <div className="mt-6 grid gap-6 sm:grid-cols-2">
-              {portfolioSamples.slice(0, 2).map((item) => (
+              {portfolioItems.slice(0, 2).map((item) => (
                 <PortfolioCard key={item.slug} item={item} />
               ))}
             </div>
