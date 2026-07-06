@@ -7,6 +7,7 @@ import CtaBanner from "@/components/CtaBanner";
 import JsonLdScript from "@/components/JsonLdScript";
 import { breadcrumbJsonLd, articleJsonLd, serviceJsonLd, faqJsonLd } from "@/lib/jsonld";
 import { portfolioDetails, getPortfolioBySlug } from "@/lib/content/portfolio";
+import { withBasePath } from "@/lib/base-path";
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
   return <h2 className="text-2xl font-extrabold text-lord-black sm:text-3xl">{children}</h2>;
@@ -62,6 +63,7 @@ export default async function PortfolioDetailPage({
         h1={item.title}
         aiSummary={item.overview}
         heroImageAlt={`${item.region} ${item.eventType} 설치 사례 — ${item.items}`}
+        heroImage={withBasePath("/images/hero/portfolio.jpg")}
       />
 
       <section className="px-5 py-16">

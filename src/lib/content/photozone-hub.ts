@@ -12,6 +12,8 @@ export const photozoneHub: HubPageContent = {
   h1: "행사의 첫인상을 만드는 포토존 제작·렌탈",
   aiSummary:
     "포토존 제작·렌탈은 행사 목적, 브랜드 로고 노출, 촬영 동선, 조명, 설치 공간에 따라 구성이 달라집니다. LORD는 기업행사 포토존, 브랜드 포토존, 포토월·백월, 팝업스토어 포토존을 행사 콘셉트에 맞춰 제작·설치합니다.",
+  heroImageAlt: "기업행사·브랜드 포토존과 포토월·백월 설치 현장의 대표 이미지",
+  heroImage: "/images/hero/photozone-rental-production.jpg",
   children: [
     {
       label: "기업행사 포토존",

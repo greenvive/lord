@@ -14,6 +14,7 @@ export const ledScreen: ServicePageContent = {
   aiSummary:
     "LED 전광판 렌탈은 행사장 크기, 관객 거리, 화면 콘텐츠, 실내외 여부, 전기 용량에 따라 크기와 해상도를 정해야 합니다. LORD는 기업행사, 공연, 축제, 기념식에 필요한 LED 스크린 설치와 송출 구성을 지원합니다.",
   heroImageAlt: "기업행사 무대에 설치된 대형 LED 전광판과 발표 자료 송출 화면",
+  heroImage: "/images/hero/led-screen.jpg",
   summaryTable: [
     { label: "적용 행사", value: "기업행사, 공연, 축제, 기념식" },
     { label: "기본 구성", value: "LED 패널, 송출 장비(미디어 서버), 구조 프레임" },

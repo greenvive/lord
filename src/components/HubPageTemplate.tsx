@@ -4,6 +4,7 @@ import PageHero from "@/components/PageHero";
 import ServiceCard from "@/components/ServiceCard";
 import FaqAccordion from "@/components/FaqAccordion";
 import CtaBanner from "@/components/CtaBanner";
+import { withBasePath } from "@/lib/base-path";
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
   return <h2 className="text-2xl font-extrabold text-lord-black sm:text-3xl">{children}</h2>;
@@ -16,7 +17,8 @@ export default function HubPageTemplate({ content }: { content: HubPageContent }
         breadcrumb={content.breadcrumb}
         h1={content.h1}
         aiSummary={content.aiSummary}
-        heroImageAlt={`${content.h1} 대표 이미지`}
+        heroImageAlt={content.heroImageAlt}
+        heroImage={withBasePath(content.heroImage)}
       />
 
       <section className="bg-lord-black px-5 pb-20">

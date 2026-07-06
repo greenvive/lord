@@ -14,6 +14,7 @@ export const trussLayer: ServicePageContent = {
   aiSummary:
     "트러스와 레이어 구조물은 조명, LED, 현수막, 포토존, 무대 장비를 안전하게 고정하기 위한 행사 구조물입니다. LORD는 행사장 조건과 장비 하중, 설치 위치, 안전 동선을 고려해 트러스·레이어를 설치합니다.",
   heroImageAlt: "야외 무대에 설치된 트러스 구조물과 조명·LED 장비",
+  heroImage: "/images/hero/truss-layer.jpg",
   summaryTable: [
     { label: "적용 대상", value: "조명, LED, 현수막, 포토존, 사인물" },
     { label: "기본 구성", value: "스탠딩 트러스, 레이어" },

@@ -14,6 +14,7 @@ export const lighting: ServicePageContent = {
   aiSummary:
     "행사 조명은 무대 집중도, 공연 연출, 사진 촬영 품질, 브랜드 분위기에 영향을 줍니다. LORD는 무대 조명, 공연 조명, 포토존 조명, 기업행사 조명을 행사 목적과 공간 조건에 맞춰 설치합니다.",
   heroImageAlt: "무대와 포토존에 설치된 조명 연출 장면",
+  heroImage: "/images/hero/lighting.jpg",
   summaryTable: [
     { label: "적용 행사", value: "무대, 공연, 기업행사, 포토존" },
     { label: "기본 구성", value: "무대 조명, 포인트 조명" },

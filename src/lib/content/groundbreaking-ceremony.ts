@@ -14,6 +14,7 @@ export const groundbreakingCeremony: ServicePageContent = {
   aiSummary:
     "준공식·기공식 무대는 내빈 의전, 테이프커팅 동선, 백월, 음향, 포토존, 현장 안전을 함께 고려해야 합니다. LORD는 공공기관, 기업, 건설 현장 행사의 목적에 맞춰 무대와 시스템 장비를 설치합니다.",
   heroImageAlt: "준공식 현장에 설치된 테이프커팅존과 무대, 음향 시스템",
+  heroImage: "/images/hero/groundbreaking-completion-ceremony.jpg",
   summaryTable: [
     { label: "적용 행사", value: "준공식, 기공식, 착공식, 테이프커팅" },
     { label: "기본 구성", value: "무대, 테이프커팅존, 음향" },

@@ -7,6 +7,7 @@ import FaqAccordion from "@/components/FaqAccordion";
 import CtaBanner from "@/components/CtaBanner";
 import JsonLdScript from "@/components/JsonLdScript";
 import HeroSlideshow from "@/components/HeroSlideshow";
+import SectionBackgroundImage from "@/components/SectionBackgroundImage";
 import { breadcrumbJsonLd, faqJsonLd } from "@/lib/jsonld";
 import { portfolioSamples } from "@/lib/content/portfolio";
 import { site } from "@/lib/site";
@@ -130,8 +131,12 @@ export default function Home() {
       </section>
 
       {/* Event Solutions */}
-      <section className="bg-lord-cream px-5 py-20">
-        <div className="mx-auto max-w-6xl">
+      <section className="relative isolate overflow-hidden bg-lord-cream px-5 py-20">
+        <SectionBackgroundImage
+          src={withBasePath("/images/bg_main01.jpg")}
+          alt="공연장 무대 조명 설치 전경"
+        />
+        <div className="relative mx-auto max-w-6xl">
           <h2 className="text-center text-2xl font-extrabold text-lord-black sm:text-3xl">행사별 솔루션</h2>
           <p className="mx-auto mt-3 max-w-2xl text-center text-sm text-[#4a4a4a]">
             서비스명보다 행사명으로 찾는 경우가 많습니다. 행사 목적에 맞는 솔루션을 바로 확인하세요.

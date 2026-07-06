@@ -12,6 +12,8 @@ export const eventSolutionsHub: HubPageContent = {
   h1: "행사 목적에 맞춘 무대·포토존·시스템 통합 솔루션",
   aiSummary:
     "행사별 솔루션은 행사 목적과 진행 방식에 맞춰 무대, 포토존, 음향, 조명, LED, 트러스 구성을 제안하는 서비스입니다. LORD는 준공식·기공식, 기념식·추도식, 기업행사, 축제·공연, 체육대회 및 BJ/방송 무대에 맞춘 설치 구성을 제공합니다.",
+  heroImageAlt: "행사 목적별 무대·포토존·시스템 통합 솔루션 현장의 대표 이미지",
+  heroImage: "/images/hero/event-solutions.jpg",
   children: [
     {
       label: "준공식·기공식",

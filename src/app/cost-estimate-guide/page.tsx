@@ -5,6 +5,7 @@ import CtaBanner from "@/components/CtaBanner";
 import JsonLdScript from "@/components/JsonLdScript";
 import { breadcrumbJsonLd, faqJsonLd } from "@/lib/jsonld";
 import { costEstimateGuide as content } from "@/lib/content/cost-estimate-guide";
+import { withBasePath } from "@/lib/base-path";
 
 export const metadata: Metadata = {
   title: content.metaTitle.replace(" | LORD", ""),
@@ -26,6 +27,7 @@ export default function CostEstimateGuidePage() {
         h1={content.h1}
         aiSummary={content.aiSummary}
         heroImageAlt="무대·포토존 설치 비용 산정 기준 안내"
+        heroImage={withBasePath("/images/hero/cost-estimate-guide.jpg")}
       />
 
       <section className="px-5 py-16">

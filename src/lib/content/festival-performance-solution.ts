@@ -14,6 +14,7 @@ export const festivalPerformanceSolution: ServicePageContent = {
   aiSummary:
     "축제·공연 설치는 무대 크기, 관객 규모, 출연자 동선, 음향 출력, 조명 연출, LED 화면, 안전 동선을 함께 고려해야 합니다. LORD는 지역축제, 대학축제, 콘서트, 공연 행사에 맞춰 무대와 시스템 장비를 통합 제공합니다.",
   heroImageAlt: "축제 현장에 설치된 대형 무대와 LED, 조명, 음향 시스템",
+  heroImage: "/images/hero/festival-performance.jpg",
   summaryTable: [
     { label: "적용 행사", value: "지역축제, 대학축제, 콘서트, 공연" },
     { label: "기본 구성", value: "무대, 음향, 조명" },

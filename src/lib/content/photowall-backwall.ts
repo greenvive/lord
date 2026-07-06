@@ -14,6 +14,7 @@ export const photowallBackwall: ServicePageContent = {
   aiSummary:
     "포토월·백월은 행사명, 브랜드 로고, 협찬사 로고가 사진과 영상에 잘 보이도록 설계하는 배경 구조물입니다. LORD는 시상식, 기자간담회, 인터뷰, 브랜드 행사에 맞춰 포토월·백월 디자인, 출력, 설치, 조명 구성을 제공합니다.",
   heroImageAlt: "시상식 현장에 설치된 로고 반복 패턴 포토월과 레드카펫",
+  heroImage: "/images/hero/photowall-backwall.jpg",
   summaryTable: [
     { label: "적용 행사", value: "시상식, 기자간담회, 인터뷰, 브랜드 행사" },
     { label: "기본 구성", value: "포토월 또는 백월 출력물, 거치 구조물" },

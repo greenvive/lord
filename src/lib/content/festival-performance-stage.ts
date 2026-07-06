@@ -14,6 +14,7 @@ export const festivalPerformanceStage: ServicePageContent = {
   aiSummary:
     "공연·축제 무대는 출연자 수, 관객 규모, 음향 출력, 조명 연출, LED 화면, 백스테이지 동선을 고려해 설계해야 합니다. LORD는 지역축제, 대학축제, 콘서트, 버스킹 등 공연형 행사에 맞춘 무대와 시스템 장비를 통합 제공합니다.",
   heroImageAlt: "공연 무대에 설치된 LED 배경 화면과 조명, 음향 시스템",
+  heroImage: "/images/hero/festival-performance-stage.jpg",
   summaryTable: [
     { label: "적용 행사", value: "지역축제, 대학축제, 콘서트, 버스킹" },
     { label: "기본 구성", value: "무대, 음향, 조명" },

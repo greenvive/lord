@@ -14,6 +14,7 @@ export const corporateEventStage: ServicePageContent = {
   aiSummary:
     "기업행사 무대는 브랜드 로고, 발표자 동선, LED 화면, 포토존, 의전 진행을 함께 고려해야 합니다. LORD는 창립기념식, 시상식, 비전선포식, 제품 발표회 등 기업행사의 목적에 맞춰 무대와 음향·조명·LED·백월·포토존을 통합 설치합니다.",
   heroImageAlt: "기업행사 무대에 설치된 LED 전광판과 브랜드 백월, 음향·조명 시스템",
+  heroImage: "/images/hero/corporate-event-stage.jpg",
   summaryTable: [
     { label: "적용 행사", value: "창립기념식, 시상식, 비전선포식, 제품 발표회, 컨퍼런스, 사내행사" },
     { label: "기본 구성", value: "무대 바닥, 백월, 포디움, 음향, 조명" },

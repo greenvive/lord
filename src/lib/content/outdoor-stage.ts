@@ -14,6 +14,7 @@ export const outdoorStage: ServicePageContent = {
   aiSummary:
     "야외 무대 설치는 바닥 상태, 우천, 강풍, 전기 공급, 관객 동선, 장비 보호를 함께 고려해야 합니다. LORD는 축제, 공연, 공공행사, 체육대회 등 야외 행사에 필요한 무대, 트러스, 음향, 조명, LED 구성을 현장 조건에 맞춰 제공합니다.",
   heroImageAlt: "야외 축제 현장에 설치된 LORD 무대와 트러스, 음향·조명 시스템",
+  heroImage: "/images/hero/outdoor-stage.jpg",
   summaryTable: [
     { label: "적용 행사", value: "지역축제, 대학축제, 공공행사, 야외 기념식, 체육대회" },
     { label: "기본 구성", value: "무대 바닥, 계단, 난간, 트러스, 음향, 조명" },

@@ -14,6 +14,7 @@ export const corporateEventSolution: ServicePageContent = {
   aiSummary:
     "기업행사 설치는 무대, 포토존, 음향, 조명, LED, 백월을 각각 따로 보는 것보다 행사 목적과 브랜드 메시지에 맞춰 통합 설계하는 것이 중요합니다. LORD는 기업행사의 발표, 시상, 촬영, 의전, 관객 동선을 고려해 공간을 구성합니다.",
   heroImageAlt: "기업행사 현장에 통합 설치된 무대, 포토존, LED, 음향 시스템",
+  heroImage: "/images/hero/corporate-event.jpg",
   summaryTable: [
     { label: "적용 행사", value: "기업행사, 사내행사, 컨퍼런스, 시상식, 비전선포식" },
     { label: "기본 구성", value: "무대, 음향, 조명" },

@@ -14,6 +14,7 @@ export const ceremonyMemorial: ServicePageContent = {
   aiSummary:
     "기념식·추도식 무대는 과한 연출보다 행사 의미, 의전 동선, 헌화·묵념 진행, 백월 디자인, 음향 전달력이 중요합니다. LORD는 공공행사와 추모행사에 맞춰 차분하고 품격 있는 무대와 시스템 구성을 제공합니다.",
   heroImageAlt: "추도식 현장에 설치된 절제된 디자인의 백월과 무대",
+  heroImage: "/images/hero/ceremony-memorial-stage.jpg",
   summaryTable: [
     { label: "적용 행사", value: "기념식, 추도식, 추모행사, 현충일 행사, 공공행사" },
     { label: "기본 구성", value: "무대, 백월, 음향" },

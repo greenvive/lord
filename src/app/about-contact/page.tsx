@@ -5,6 +5,7 @@ import ContactForm from "@/components/ContactForm";
 import JsonLdScript from "@/components/JsonLdScript";
 import { breadcrumbJsonLd, faqJsonLd, organizationJsonLd, localBusinessJsonLd } from "@/lib/jsonld";
 import { site } from "@/lib/site";
+import { withBasePath } from "@/lib/base-path";
 
 const breadcrumb = [
   { name: "홈", href: "/" },
@@ -61,6 +62,7 @@ export default function AboutContactPage() {
         h1="행사 공간 설치 전문 기업 LORD"
         aiSummary="LORD는 무대 설치·렌탈, 포토존 제작·렌탈, 음향·조명·LED·트러스 시스템을 제공하는 행사 공간 설치 전문 기업입니다. 기업행사, 공공행사, 축제, 공연, 체육대회, 방송형 행사에 맞춰 현장 조건 기반의 설치 구성을 제안합니다."
         heroImageAlt="LORD 행사 설치 현장 대표 이미지"
+        heroImage={withBasePath("/images/hero/about-contact.jpg")}
       />
 
       <section className="px-5 py-16">

@@ -36,6 +36,7 @@ export interface ServicePageContent {
   h1: string;
   aiSummary: string;
   heroImageAlt: string;
+  heroImage: string;
   summaryTable: SummaryRow[];
   eventFit: string[];
   scope: string[];
@@ -61,6 +62,8 @@ export interface HubPageContent {
   metaDescription: string;
   h1: string;
   aiSummary: string;
+  heroImageAlt: string;
+  heroImage: string;
   children: HubChildCard[];
   scope: string[];
   process: string[];

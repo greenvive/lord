@@ -12,6 +12,8 @@ export const systemHub: HubPageContent = {
   h1: "무대와 행사를 완성하는 음향·조명·LED·트러스 시스템",
   aiSummary:
     "행사 시스템은 무대의 전달력과 관객 경험을 결정하는 핵심 요소입니다. LORD는 행사 규모와 장소 조건에 맞춰 음향, 조명, LED 전광판, 트러스/레이어 구조물을 설치하고, 리허설과 운영까지 지원합니다.",
+  heroImageAlt: "음향·조명·LED·트러스 시스템이 통합 설치된 현장의 대표 이미지",
+  heroImage: "/images/hero/system-equipment-rental.jpg",
   children: [
     { label: "음향", href: "/system-equipment-rental/sound", description: "참석 인원과 실내외 조건에 맞춘 음향 장비 렌탈·운영", ready: false },
     { label: "조명", href: "/system-equipment-rental/lighting", description: "무대·포토존·공연을 위한 조명 연출 및 설치", ready: false },

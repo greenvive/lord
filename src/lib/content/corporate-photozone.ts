@@ -14,6 +14,7 @@ export const corporatePhotozone: ServicePageContent = {
   aiSummary:
     "기업행사 포토존은 브랜드 로고, 행사명, 참석자 동선, 사진 촬영 품질을 고려해 설계해야 합니다. LORD는 시상식, 창립기념식, 컨퍼런스, 사내행사에 맞춘 포토월·백월·조명·레드카펫 구성을 제공합니다.",
   heroImageAlt: "기업행사장에 설치된 브랜드 로고 포토존과 레드카펫",
+  heroImage: "/images/hero/corporate-photozone.jpg",
   summaryTable: [
     { label: "적용 행사", value: "시상식, 창립기념식, 컨퍼런스, 사내행사" },
     { label: "기본 구성", value: "포토존 백월, 조명" },

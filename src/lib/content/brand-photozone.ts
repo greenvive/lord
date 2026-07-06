@@ -14,6 +14,7 @@ export const brandPhotozone: ServicePageContent = {
   aiSummary:
     "브랜드 포토존은 단순 배경물이 아니라 브랜드 메시지, 제품 노출, 방문자 촬영 경험을 설계하는 공간입니다. LORD는 신제품 출시, 브랜드 캠페인, 체험존, 홍보 행사에 맞춰 포토존과 오브제, 조명, 사인물을 제작·설치합니다.",
   heroImageAlt: "신제품 출시 행사에 설치된 브랜드 컬러 포토존과 오브제",
+  heroImage: "/images/hero/brand-photozone.jpg",
   summaryTable: [
     { label: "적용 행사", value: "신제품 출시, 브랜드 캠페인, 홍보 행사, 체험존" },
     { label: "기본 구성", value: "포토존 오브제, 조명" },

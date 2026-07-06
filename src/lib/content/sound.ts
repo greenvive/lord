@@ -14,6 +14,7 @@ export const sound: ServicePageContent = {
   aiSummary:
     "행사 음향은 참석 인원, 공간 크기, 실내외 여부, 공연 여부, 발표자 수에 따라 구성이 달라집니다. LORD는 스피커, 마이크, 믹서, 모니터 스피커, 오퍼레이터를 행사 목적에 맞춰 구성하고 설치·운영합니다.",
   heroImageAlt: "행사장에 설치된 스피커와 무선 마이크, 음향 믹서 시스템",
+  heroImage: "/images/hero/sound.jpg",
   summaryTable: [
     { label: "적용 행사", value: "공연, 기업행사, 축제, 세미나, 체육대회" },
     { label: "기본 구성", value: "스피커, 마이크, 믹서" },

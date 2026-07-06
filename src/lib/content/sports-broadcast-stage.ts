@@ -14,6 +14,7 @@ export const sportsBroadcastStage: ServicePageContent = {
   aiSummary:
     "체육대회 무대는 넓은 야외 공간에서 진행자 음성 전달, 시상 동선, 관객 안전이 중요하고, BJ/방송 무대는 카메라 구도, 조명, 배경 세트, 음향 품질이 중요합니다. LORD는 체육대회, 운동회, 개인방송, 라이브커머스에 맞춘 무대와 시스템 구성을 제공합니다.",
   heroImageAlt: "체육대회 본부석 무대와 BJ 방송용 배경 세트",
+  heroImage: "/images/hero/sports-broadcast-stage.jpg",
   summaryTable: [
     { label: "적용 행사", value: "체육대회, 운동회, BJ/개인방송, 라이브커머스" },
     { label: "기본 구성(체육대회)", value: "본부석, 시상무대, 음향" },

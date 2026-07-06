@@ -14,6 +14,7 @@ export const popupStorePhotozone: ServicePageContent = {
   aiSummary:
     "팝업스토어 포토존은 브랜드 메시지를 체험 공간 안에서 자연스럽게 노출하고, 방문자가 사진과 영상을 촬영해 공유하도록 설계해야 합니다. LORD는 팝업스토어 콘셉트에 맞춰 포토존, 오브제, 백월, 조명, 사인물을 제작·설치합니다.",
   heroImageAlt: "팝업스토어 내부에 설치된 체험형 포토존과 브랜드 오브제",
+  heroImage: "/images/hero/popup-store-photozone.jpg",
   summaryTable: [
     { label: "적용 행사", value: "팝업스토어, 체험형 행사" },
     { label: "기본 구성", value: "포토존 오브제, 사인물" },

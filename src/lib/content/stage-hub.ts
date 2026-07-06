@@ -12,6 +12,8 @@ export const stageHub: HubPageContent = {
   h1: "행사 목적과 현장 조건에 맞춘 무대 설치·렌탈",
   aiSummary:
     "무대 설치·렌탈은 행사 규모, 장소, 참석 인원, 무대 높이, 음향·조명·LED 구성에 따라 설계가 달라집니다. LORD는 실내·야외·기업행사·공연 무대를 현장 조건에 맞춰 설치하고, 필요 시 포토존, 백월, 음향, 조명, LED 시스템까지 통합 구성합니다.",
+  heroImageAlt: "실내·야외·기업행사·공연 무대 통합 설치 현장의 대표 이미지",
+  heroImage: "/images/hero/stage-rental-installation.jpg",
   children: [
     {
       label: "실내 무대",

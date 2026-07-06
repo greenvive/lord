@@ -14,6 +14,7 @@ export const indoorStage: ServicePageContent = {
   aiSummary:
     "실내 무대 설치는 행사장 천고, 바닥 하중, 반입 동선, 전기 용량, 관객 시야를 고려해야 합니다. LORD는 호텔 연회장, 강당, 컨벤션센터, 회의실 등 실내 공간 조건에 맞춰 무대 높이와 규모, 백월, 음향, 조명 구성을 제안합니다.",
   heroImageAlt: "호텔 연회장에 설치된 실내 무대와 백월, 조명 시스템",
+  heroImage: "/images/hero/indoor-stage.jpg",
   summaryTable: [
     { label: "적용 행사", value: "세미나, 시상식, 기업행사, 컨퍼런스, 기념식, 발표회" },
     { label: "기본 구성", value: "무대 바닥, 백월, 음향, 조명" },
