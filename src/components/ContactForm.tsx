@@ -8,43 +8,51 @@ const services = ["무대", "포토존", "음향", "조명", "LED", "트러스",
 const inputClass = "w-full rounded-xl border border-black/15 px-4 py-3 text-sm focus:border-lord-orange focus:outline-none";
 
 export default function ContactForm() {
-  const [status, setStatus] = useState<"idle" | "success">("idle");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setStatus("submitting");
 
     const form = event.currentTarget;
     const formData = new FormData(form);
-    const rows: [string, string][] = [
-      ["이름", String(formData.get("name") ?? "")],
-      ["회사명", String(formData.get("company") ?? "")],
-      ["연락처", String(formData.get("phone") ?? "")],
-      ["이메일", String(formData.get("email") ?? "")],
-      ["행사명", String(formData.get("eventName") ?? "")],
-      ["행사일", String(formData.get("eventDate") ?? "")],
-      ["설치 장소", String(formData.get("location") ?? "")],
-      ["실내/야외", String(formData.get("indoorOutdoor") ?? "")],
-      ["예상 참석 인원", String(formData.get("attendees") ?? "")],
-      ["필요한 서비스", formData.getAll("services").join(", ")],
-      ["예산 범위", String(formData.get("budget") ?? "")],
-      ["문의 내용", String(formData.get("message") ?? "")],
-    ];
+    const payload = {
+      name: String(formData.get("name") ?? ""),
+      company: String(formData.get("company") ?? ""),
+      phone: String(formData.get("phone") ?? ""),
+      email: String(formData.get("email") ?? ""),
+      eventName: String(formData.get("eventName") ?? ""),
+      eventDate: String(formData.get("eventDate") ?? ""),
+      location: String(formData.get("location") ?? ""),
+      indoorOutdoor: String(formData.get("indoorOutdoor") ?? ""),
+      attendees: String(formData.get("attendees") ?? ""),
+      services: formData.getAll("services").map(String),
+      budget: String(formData.get("budget") ?? ""),
+      message: String(formData.get("message") ?? ""),
+    };
 
-    const body = rows.map(([label, value]) => `${label}: ${value || "(미입력)"}`).join("\n");
-    const subject = `[상담 문의] ${formData.get("eventName") || formData.get("name") || "LORD 상담 신청"}`;
-    const mailtoUrl = `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-    window.location.href = mailtoUrl;
-    setStatus("success");
+    try {
+      // Google Apps Script 웹 앱은 fetch 응답에 CORS 헤더를 안정적으로 내려주지 않으므로
+      // no-cors로 전송하고, 요청 자체가 실패(네트워크 오류 등)한 경우만 에러로 처리합니다.
+      await fetch(site.contactFormEndpoint, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload),
+      });
+      form.reset();
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
   }
 
   if (status === "success") {
     return (
       <div className="rounded-2xl border border-lord-orange bg-lord-cream p-8 text-center">
-        <p className="text-lg font-extrabold text-lord-black">메일 작성 화면으로 이동합니다.</p>
+        <p className="text-lg font-extrabold text-lord-black">상담 신청이 접수되었습니다.</p>
         <p className="mt-2 text-sm text-[#4a4a4a]">
-          이메일 클라이언트에서 작성된 문의 내용을 확인하고 전송해주세요. 메일이 열리지 않는다면 전화 또는
-          카카오톡으로 문의해주세요.
+          담당자 확인 후 빠르게 연락드리겠습니다. 급한 경우 전화 또는 카카오톡으로 문의해주세요.
         </p>
       </div>
     );
@@ -89,8 +97,14 @@ export default function ContactForm() {
         <textarea name="message" rows={5} className={`${inputClass} mt-2`} placeholder="행사 목적, 참고 이미지 링크, 기타 요청 사항을 자유롭게 남겨주세요." />
       </div>
 
-      <button type="submit" className="btn-primary w-full">
-        상담 신청하기 (메일 작성)
+      {status === "error" && (
+        <p className="text-sm font-bold text-red-600">
+          접수 중 오류가 발생했습니다. 전화 또는 카카오톡으로 문의해주세요.
+        </p>
+      )}
+
+      <button type="submit" className="btn-primary w-full" disabled={status === "submitting"}>
+        {status === "submitting" ? "접수 중..." : "상담 신청하기"}
       </button>
     </form>
   );

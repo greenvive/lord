@@ -8,6 +8,9 @@ export const site = {
   phoneDisplay: "1000-0000",
   email: "contact@lord-stage.kr",
   kakaoUrl: "https://pf.kakao.com/_lordstage",
+  // 상담 신청 폼 제출 대상. web/google-apps-script/Code.gs를 구글 시트에 배포한 뒤
+  // 발급되는 웹 앱 URL(.../exec)로 교체하세요.
+  contactFormEndpoint: "https://script.google.com/macros/s/REPLACE_WITH_DEPLOYMENT_ID/exec",
   areaServed: ["수도권", "서울", "경기", "인천", "전국"],
   sameAs: ["https://www.instagram.com/lord.stage", "https://blog.naver.com/lordstage"],
 };
