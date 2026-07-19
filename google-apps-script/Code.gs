@@ -11,10 +11,10 @@
 // 6. 배포 클릭 (코드만 저장하고 재배포하지 않으면 기존 웹 앱 URL에는 반영되지 않습니다)
 
 const SPREADSHEET_ID = "1G0j8qUDnZEINd0b5DhAJ0vvshODE3rOSM7ERDTcdwkE";
-const SHEET_NAME = "상담관리_마스터시트";
+const SHEET_NAME = "상담관리_마스터";
 const NOTIFY_EMAILS = ["shchen74@naver.com", "ncate@naver.com"];
 
-// 상담관리_마스터시트의 앞쪽 14개 열(번호~문의 내용) 순서에 맞춘 헤더입니다.
+// 상담관리_마스터 시트의 앞쪽 14개 열(번호~문의 내용) 순서에 맞춘 헤더입니다.
 // 15번째 열(담당자)부터는 담당자가 상담 진행 중 수기로 채우는 항목이라 폼 제출 시에는 비워둡니다.
 const HEADER = [
   "번호", "접수일시", "이름", "회사명", "연락처", "이메일", "행사명", "행사일",
