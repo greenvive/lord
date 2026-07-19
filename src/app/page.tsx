@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Button from "@/components/Button";
-import ServiceCard from "@/components/ServiceCard";
+// import ServiceCard from "@/components/ServiceCard";
 import PortfolioCard from "@/components/PortfolioCard";
 import FaqAccordion from "@/components/FaqAccordion";
 import CtaBanner from "@/components/CtaBanner";
@@ -106,7 +106,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Service Cards */}
+      {/* Service Cards
       <section className="bg-lord-black px-5 pb-24">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-center text-2xl font-extrabold text-white sm:text-3xl">서비스 3대 영역</h2>
@@ -129,6 +129,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      */}
 
       {/* Event Solutions */}
       <section className="relative isolate overflow-hidden bg-lord-cream px-5 py-20">
