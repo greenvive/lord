@@ -9,7 +9,7 @@ export const site = {
   email: "contact@lord-stage.kr",
   kakaoUrl: "https://pf.kakao.com/_lordstage",
   // 상담 신청 폼 제출 대상 (web/google-apps-script/Code.gs 배포 URL)
-  contactFormEndpoint: "https://script.google.com/macros/s/AKfycbwI5sRSgsM8NuivRw3wKr6EsakqyRf5nYhnC7j-pU9bUMcTM0uPBYVNuQ9lbXU9VgocwA/exec",
+  contactFormEndpoint: "https://script.google.com/macros/s/AKfycbwK9si2j_f8bT4mY1v_I3joigf9nfETk1oIjtQXu9JyPeI2Ovyhh2dnqBED_UEIIxz8TQ/exec",
   areaServed: ["수도권", "서울", "경기", "인천", "전국"],
   sameAs: ["https://www.instagram.com/lord.stage", "https://blog.naver.com/lordstage"],
 };
