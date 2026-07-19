@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import type { PortfolioImage } from "@/lib/types";
-import { withBasePath } from "@/lib/base-path";
 
 function ArrowButton({
   direction,
@@ -52,7 +51,7 @@ export default function GalleryViewer({ images }: { images: PortfolioImage[] }) 
     <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-lord-black sm:aspect-[16/10]">
       <Image
         key={current.src}
-        src={withBasePath(current.src)}
+        src={current.src}
         alt={current.alt}
         fill
         sizes="(min-width: 1024px) 896px, 100vw"

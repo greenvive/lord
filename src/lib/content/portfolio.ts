@@ -1,10 +1,11 @@
 import type { PortfolioItem } from "@/lib/types";
+import { withBasePath } from "@/lib/base-path";
 
 function buildImages(slug: string, count: number, title: string) {
   return Array.from({ length: count }, (_, i) => {
     const n = String(i + 1).padStart(2, "0");
     return {
-      src: `/images/portfolio/${slug}/${n}.jpg`,
+      src: withBasePath(`/images/portfolio/${slug}/${n}.jpg`),
       alt: `${title} 현장 사진 ${i + 1}`,
     };
   });
