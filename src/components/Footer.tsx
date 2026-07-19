@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { nav, site } from "@/lib/site";
+import { withBasePath } from "@/lib/base-path";
 
 export default function Footer() {
   return (
@@ -7,9 +9,13 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-10 md:grid-cols-4">
           <div>
-            <p className="font-en text-2xl font-extrabold text-white">
-              LORD<span className="text-lord-orange">.</span>
-            </p>
+            <Image
+              src={withBasePath("/images/logo.jpg")}
+              alt="LORD"
+              width={188}
+              height={131}
+              className="h-12 w-auto"
+            />
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-white/60">{site.description}</p>
           </div>
 

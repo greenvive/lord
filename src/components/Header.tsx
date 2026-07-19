@@ -1,17 +1,18 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { nav, site } from "@/lib/site";
 
-export default function Header() {
+export default function Header({ logoSrc }: { logoSrc: string }) {
   const [open, setOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-lord-black/95 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
-        <Link href="/" className="font-en text-2xl font-extrabold tracking-tight text-white">
-          LORD<span className="text-lord-orange">.</span>
+        <Link href="/" className="shrink-0">
+          <Image src={logoSrc} alt="LORD" width={188} height={131} className="h-10 w-auto" priority />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">

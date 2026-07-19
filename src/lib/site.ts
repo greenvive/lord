@@ -4,9 +4,9 @@ export const site = {
   url: "https://greenvive.github.io/lord",
   description:
     "LORD는 기업행사, 공공행사, 축제, 공연을 위한 무대 설치·렌탈, 포토존 제작, 음향·조명·LED·트러스 시스템을 통합 제공하는 행사 공간 설치 전문 업체입니다.",
-  phone: "+82-1000-0000",
-  phoneDisplay: "1000-0000",
-  email: "contact@lord-stage.kr",
+  phone: "+82-10-4593-7580",
+  phoneDisplay: "010-4593-7580",
+  email: "shchen74@naver.com",
   kakaoUrl: "https://pf.kakao.com/_lordstage",
   // 상담 신청 폼 제출 대상 (web/google-apps-script/Code.gs 배포 URL)
   contactFormEndpoint: "https://script.google.com/macros/s/AKfycbz9Uq8jHe81F03DxqVhp93htZIdupqqb5UrpzONtENbx-jP5vbcbU8Ed5aCtiLGObOHNA/exec",

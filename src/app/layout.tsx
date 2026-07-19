@@ -6,6 +6,7 @@ import MobileStickyCta from "@/components/MobileStickyCta";
 import JsonLdScript from "@/components/JsonLdScript";
 import { organizationJsonLd, localBusinessJsonLd, websiteJsonLd } from "@/lib/jsonld";
 import { site } from "@/lib/site";
+import { withBasePath } from "@/lib/base-path";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -25,7 +26,7 @@ export default function RootLayout({
     <html lang="ko" className="h-full antialiased">
       <body className="flex min-h-full flex-col font-kr">
         <JsonLdScript data={[organizationJsonLd(), localBusinessJsonLd(), websiteJsonLd()]} />
-        <Header />
+        <Header logoSrc={withBasePath("/images/logo.jpg")} />
         <main className="flex-1 pb-16 lg:pb-0">{children}</main>
         <Footer />
         <MobileStickyCta />
