@@ -424,12 +424,12 @@ const rawPortfolioItems: RawPortfolioItem[] = [
 ];
 
 export const portfolioItems: PortfolioItem[] = rawPortfolioItems.map((item) => {
-  const cardImage = `/images/portfolio/${item.slug}-card.jpg`;
+  const rawCardImage = `/images/portfolio/${item.slug}-card.jpg`;
   return {
     ...item,
     imageBlurDataURL: portfolioBlurMap[item.image],
-    cardImage,
-    cardImageBlurDataURL: portfolioBlurMap[cardImage],
+    cardImage: withBasePath(rawCardImage),
+    cardImageBlurDataURL: portfolioBlurMap[rawCardImage],
   };
 });
 

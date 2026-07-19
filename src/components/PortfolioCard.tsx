@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { PortfolioItem } from "@/lib/types";
-import { withBasePath } from "@/lib/base-path";
 
 export default function PortfolioCard({ item }: { item: PortfolioItem }) {
   return (
@@ -12,7 +11,7 @@ export default function PortfolioCard({ item }: { item: PortfolioItem }) {
     >
       <div className="relative h-44 w-full overflow-hidden">
         <Image
-          src={withBasePath(item.cardImage)}
+          src={item.cardImage}
           alt={item.imageAlt}
           fill
           sizes="(min-width: 1024px) 360px, 100vw"
