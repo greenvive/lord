@@ -9,9 +9,17 @@ interface PageHeroProps {
   aiSummary: string;
   heroImageAlt: string;
   heroImage: string;
+  heroImageBlurDataURL?: string;
 }
 
-export default function PageHero({ breadcrumb, h1, aiSummary, heroImageAlt, heroImage }: PageHeroProps) {
+export default function PageHero({
+  breadcrumb,
+  h1,
+  aiSummary,
+  heroImageAlt,
+  heroImage,
+  heroImageBlurDataURL,
+}: PageHeroProps) {
   return (
     <section className="relative isolate overflow-hidden bg-lord-black px-5 pb-20 pt-10 text-white">
       <div className="absolute inset-0 -z-10" aria-hidden>
@@ -22,6 +30,8 @@ export default function PageHero({ breadcrumb, h1, aiSummary, heroImageAlt, hero
           sizes="100vw"
           priority
           className="object-cover"
+          placeholder={heroImageBlurDataURL ? "blur" : undefined}
+          blurDataURL={heroImageBlurDataURL}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/70 to-black/90" />
         <div

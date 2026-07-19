@@ -26,6 +26,7 @@ export default function Header() {
                     <Link
                       key={child.href}
                       href={child.ready ? child.href : item.href}
+                      prefetch={false}
                       className="block rounded-xl px-3 py-2 text-sm text-white/80 hover:bg-white/5 hover:text-lord-orange"
                     >
                       {child.label}

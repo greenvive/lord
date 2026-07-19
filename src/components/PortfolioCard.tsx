@@ -5,7 +5,11 @@ import { withBasePath } from "@/lib/base-path";
 
 export default function PortfolioCard({ item }: { item: PortfolioItem }) {
   return (
-    <Link href={`/portfolio/${item.slug}`} className="portfolio-card block transition hover:-translate-y-1">
+    <Link
+      href={`/portfolio/${item.slug}`}
+      prefetch={false}
+      className="portfolio-card block transition hover:-translate-y-1"
+    >
       <div className="relative h-44 w-full overflow-hidden">
         <Image
           src={withBasePath(item.image)}
@@ -13,6 +17,8 @@ export default function PortfolioCard({ item }: { item: PortfolioItem }) {
           fill
           sizes="(min-width: 1024px) 360px, 100vw"
           className="object-cover"
+          placeholder={item.imageBlurDataURL ? "blur" : undefined}
+          blurDataURL={item.imageBlurDataURL}
         />
       </div>
       <div className="p-5">

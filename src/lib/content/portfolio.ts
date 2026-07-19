@@ -1,18 +1,21 @@
 import type { PortfolioItem } from "@/lib/types";
 import { withBasePath } from "@/lib/base-path";
+import { portfolioBlurMap } from "@/lib/content/portfolio-blur";
 
 function buildImages(slug: string, count: number, title: string) {
   return Array.from({ length: count }, (_, i) => {
     const n = String(i + 1).padStart(2, "0");
+    const rawSrc = `/images/portfolio/${slug}/${n}.jpg`;
     return {
-      src: withBasePath(`/images/portfolio/${slug}/${n}.jpg`),
+      src: withBasePath(rawSrc),
       alt: `${title} 현장 사진 ${i + 1}`,
+      blurDataURL: portfolioBlurMap[rawSrc],
     };
   });
 }
 
 // "사진자료 내용정리.xlsx" 폴더명 기준으로 img_org/recent/ 실제 시공 사진과 매칭한 데이터입니다.
-export const portfolioItems: PortfolioItem[] = [
+const rawPortfolioItems: PortfolioItem[] = [
   {
     slug: "un-forces-memorial-ceremony",
     title: "유엔군초전기념 추도식",
@@ -183,6 +186,11 @@ export const portfolioItems: PortfolioItem[] = [
     images: buildImages("indoor-badminton-center-opening-ceremony", 3, "실내배드민턴장 개관식"),
   },
 ];
+
+export const portfolioItems: PortfolioItem[] = rawPortfolioItems.map((item) => ({
+  ...item,
+  imageBlurDataURL: portfolioBlurMap[item.image],
+}));
 
 export function getPortfolioBySlug(slug: string) {
   return portfolioItems.find((item) => item.slug === slug);

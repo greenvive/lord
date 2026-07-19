@@ -74,6 +74,7 @@ export interface HubPageContent {
 export interface PortfolioImage {
   src: string;
   alt: string;
+  blurDataURL?: string;
 }
 
 export interface PortfolioItem {
@@ -87,5 +88,6 @@ export interface PortfolioItem {
   folder: string;
   image: string;
   imageAlt: string;
+  imageBlurDataURL?: string;
   images: PortfolioImage[];
 }

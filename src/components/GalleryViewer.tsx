@@ -60,6 +60,8 @@ export default function GalleryViewer({ images }: { images: PortfolioImage[] }) 
           }`}
           priority={i === 0}
           loading={i === 0 ? undefined : "eager"}
+          placeholder={image.blurDataURL ? "blur" : undefined}
+          blurDataURL={image.blurDataURL}
         />
       ))}
       {total > 1 && (

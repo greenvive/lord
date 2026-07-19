@@ -61,6 +61,7 @@ export default async function PortfolioDetailPage({
         aiSummary={`${item.region} ${item.place}에서 진행된 ${item.category} 행사입니다. 주최·주관: ${item.organizer} / 일자: ${item.date}.`}
         heroImageAlt={item.imageAlt}
         heroImage={withBasePath(item.image)}
+        heroImageBlurDataURL={item.imageBlurDataURL}
       />
 
       <section className="px-5 py-16">
