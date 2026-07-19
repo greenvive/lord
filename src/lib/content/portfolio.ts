@@ -41,7 +41,7 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     slug: "heritage-concert",
-    title: "헤리티지콘서트",
+    title: "헤리티지 콘서트",
     category: "콘서트",
     place: "야외",
     date: "2026.06.13",
@@ -49,8 +49,8 @@ export const portfolioItems: PortfolioItem[] = [
     organizer: "수원시 / OBS",
     folder: "(260613)헤리티지 콘서트",
     image: "/images/portfolio/heritage-concert.jpg",
-    imageAlt: "헤리티지콘서트 야외 대형 무대와 LED 스크린, 관객 전경",
-    images: buildImages("heritage-concert", 8, "헤리티지콘서트"),
+    imageAlt: "헤리티지 콘서트 야외 대형 무대와 LED 스크린 설치 전경",
+    images: buildImages("heritage-concert", 8, "헤리티지 콘서트"),
   },
   {
     slug: "sungkyul-univ-festival",
@@ -75,7 +75,7 @@ export const portfolioItems: PortfolioItem[] = [
     organizer: "오산시",
     folder: "(260522)오산장미빛축제",
     image: "/images/portfolio/osan-rose-festival.jpg",
-    imageAlt: "오산 장미빛 축제 야외 공연 무대와 LED 스크린",
+    imageAlt: "오산 장미빛 축제 야외 공연 무대와 LED 스크린 설치 전경",
     images: buildImages("osan-rose-festival", 2, "오산 장미빛 축제"),
   },
   {
@@ -166,7 +166,7 @@ export const portfolioItems: PortfolioItem[] = [
     organizer: "수협은행",
     folder: "(260323)서울오픈3쿠션당구대회",
     image: "/images/portfolio/seoul-open-3-cushion-billiards.jpg",
-    imageAlt: "서울오픈 3쿠션 당구대회 브랜드 백드롭과 경기 테이블 설치",
+    imageAlt: "서울오픈 3쿠션 당구대회 브랜드 백드롭과 경기 테이블 설치 전경",
     images: buildImages("seoul-open-3-cushion-billiards", 6, "서울오픈 3쿠션 당구대회"),
   },
   {
