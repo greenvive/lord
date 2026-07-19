@@ -45,19 +45,23 @@ export default function GalleryViewer({ images }: { images: PortfolioImage[] }) 
   }, [total]);
 
   if (total === 0) return null;
-  const current = images[index];
 
   return (
     <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-lord-black sm:aspect-[16/10]">
-      <Image
-        key={current.src}
-        src={current.src}
-        alt={current.alt}
-        fill
-        sizes="(min-width: 1024px) 896px, 100vw"
-        className="object-contain"
-        priority
-      />
+      {images.map((image, i) => (
+        <Image
+          key={image.src}
+          src={image.src}
+          alt={image.alt}
+          fill
+          sizes="(min-width: 1024px) 896px, 100vw"
+          className={`object-contain transition-opacity duration-200 ${
+            i === index ? "opacity-100" : "pointer-events-none opacity-0"
+          }`}
+          priority={i === 0}
+          loading={i === 0 ? undefined : "eager"}
+        />
+      ))}
       {total > 1 && (
         <>
           <ArrowButton direction="prev" onClick={goPrev} />
