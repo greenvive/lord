@@ -12,13 +12,13 @@ export default function PortfolioCard({ item }: { item: PortfolioItem }) {
     >
       <div className="relative h-44 w-full overflow-hidden">
         <Image
-          src={withBasePath(item.image)}
+          src={withBasePath(item.cardImage)}
           alt={item.imageAlt}
           fill
           sizes="(min-width: 1024px) 360px, 100vw"
           className="object-cover"
-          placeholder={item.imageBlurDataURL ? "blur" : undefined}
-          blurDataURL={item.imageBlurDataURL}
+          placeholder={item.cardImageBlurDataURL ? "blur" : undefined}
+          blurDataURL={item.cardImageBlurDataURL}
         />
       </div>
       <div className="p-5">

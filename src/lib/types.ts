@@ -89,5 +89,7 @@ export interface PortfolioItem {
   image: string;
   imageAlt: string;
   imageBlurDataURL?: string;
+  cardImage: string;
+  cardImageBlurDataURL?: string;
   images: PortfolioImage[];
 }

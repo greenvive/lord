@@ -14,8 +14,10 @@ function buildImages(slug: string, count: number, title: string) {
   });
 }
 
+type RawPortfolioItem = Omit<PortfolioItem, "cardImage" | "imageBlurDataURL" | "cardImageBlurDataURL">;
+
 // "사진자료 내용정리.xlsx" 폴더명 기준으로 img_org/recent/ 실제 시공 사진과 매칭한 데이터입니다.
-const rawPortfolioItems: PortfolioItem[] = [
+const rawPortfolioItems: RawPortfolioItem[] = [
   {
     slug: "un-forces-memorial-ceremony",
     title: "유엔군초전기념 추도식",
@@ -187,10 +189,15 @@ const rawPortfolioItems: PortfolioItem[] = [
   },
 ];
 
-export const portfolioItems: PortfolioItem[] = rawPortfolioItems.map((item) => ({
-  ...item,
-  imageBlurDataURL: portfolioBlurMap[item.image],
-}));
+export const portfolioItems: PortfolioItem[] = rawPortfolioItems.map((item) => {
+  const cardImage = `/images/portfolio/${item.slug}-card.jpg`;
+  return {
+    ...item,
+    imageBlurDataURL: portfolioBlurMap[item.image],
+    cardImage,
+    cardImageBlurDataURL: portfolioBlurMap[cardImage],
+  };
+});
 
 export function getPortfolioBySlug(slug: string) {
   return portfolioItems.find((item) => item.slug === slug);
