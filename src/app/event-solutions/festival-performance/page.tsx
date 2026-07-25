@@ -1,30 +1,14 @@
 import type { Metadata } from "next";
-import ServicePageTemplate from "@/components/ServicePageTemplate";
-import JsonLdScript from "@/components/JsonLdScript";
-import { breadcrumbJsonLd, faqJsonLd, serviceJsonLd } from "@/lib/jsonld";
-import { festivalPerformanceSolution as content } from "@/lib/content/festival-performance-solution";
+import LegacyRedirect from "@/components/LegacyRedirect";
+
+const TARGET = "/event-solutions/concert";
 
 export const metadata: Metadata = {
-  title: content.metaTitle.replace(" | LORD", ""),
-  description: content.metaDescription,
-  alternates: { canonical: `/event-solutions/${content.slug}` },
+  title: "콘서트 무대 설치·렌탈 솔루션으로 이동",
+  robots: { index: false, follow: true },
+  alternates: { canonical: TARGET },
 };
 
-export default function FestivalPerformanceSolutionPage() {
-  return (
-    <>
-      <JsonLdScript
-        data={[
-          breadcrumbJsonLd(content.breadcrumb),
-          serviceJsonLd({
-            name: content.h1,
-            description: content.metaDescription,
-            url: `/event-solutions/${content.slug}`,
-          }),
-          faqJsonLd(content.faq),
-        ]}
-      />
-      <ServicePageTemplate content={content} />
-    </>
-  );
+export default function FestivalPerformanceRedirectPage() {
+  return <LegacyRedirect to={TARGET} />;
 }

@@ -28,6 +28,15 @@ export interface RelatedLink {
   href: string;
 }
 
+export interface CaseStudyRow {
+  date: string;
+  category: string;
+  title: string;
+  region: string;
+  place: string;
+  organizer: string;
+}
+
 export interface ServicePageContent {
   slug: string;
   breadcrumb: Breadcrumb[];
@@ -39,6 +48,9 @@ export interface ServicePageContent {
   heroImage: string;
   summaryTable: SummaryRow[];
   eventFit: string[];
+  /** 이 페이지가 매칭할 portfolio.category 값 목록 (관련 포트폴리오 필터링 + 대표 사례 표에 사용). 없으면 기존 방식(배열 앞 2건)으로 표시 */
+  caseCategoryTags?: string[];
+  notableCases?: CaseStudyRow[];
   scope: string[];
   configExamples: ConfigExample[];
   process: string[];
@@ -53,6 +65,9 @@ export interface HubChildCard {
   href: string;
   description: string;
   ready: boolean;
+  /** 이미지 기반 카드(SolutionCard)를 쓰려면 지정. 없으면 기존 ServiceCard(텍스트 카드)로 렌더링됨 */
+  image?: string;
+  imageAlt?: string;
 }
 
 export interface HubPageContent {

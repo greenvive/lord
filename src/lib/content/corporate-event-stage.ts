@@ -83,7 +83,7 @@ export const corporateEventStage: ServicePageContent = {
   relatedLinks: [
     { label: "기업행사 포토존", href: "/photozone-rental-production/corporate-photozone" },
     { label: "LED 전광판", href: "/system-equipment-rental/led-screen" },
-    { label: "기업행사 솔루션", href: "/event-solutions/corporate-event" },
+    { label: "행사별 솔루션 보기", href: "/event-solutions" },
     { label: "비용·견적 가이드", href: "/cost-estimate-guide" },
   ],
 };

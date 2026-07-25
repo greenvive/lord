@@ -1,30 +1,14 @@
 import type { Metadata } from "next";
-import ServicePageTemplate from "@/components/ServicePageTemplate";
-import JsonLdScript from "@/components/JsonLdScript";
-import { breadcrumbJsonLd, faqJsonLd, serviceJsonLd } from "@/lib/jsonld";
-import { ceremonyMemorial as content } from "@/lib/content/ceremony-memorial";
+import LegacyRedirect from "@/components/LegacyRedirect";
+
+const TARGET = "/event-solutions/ceremony-groundbreaking";
 
 export const metadata: Metadata = {
-  title: content.metaTitle.replace(" | LORD", ""),
-  description: content.metaDescription,
-  alternates: { canonical: `/event-solutions/${content.slug}` },
+  title: "기념식·기공식 무대 설치 솔루션으로 이동",
+  robots: { index: false, follow: true },
+  alternates: { canonical: TARGET },
 };
 
-export default function CeremonyMemorialPage() {
-  return (
-    <>
-      <JsonLdScript
-        data={[
-          breadcrumbJsonLd(content.breadcrumb),
-          serviceJsonLd({
-            name: content.h1,
-            description: content.metaDescription,
-            url: `/event-solutions/${content.slug}`,
-          }),
-          faqJsonLd(content.faq),
-        ]}
-      />
-      <ServicePageTemplate content={content} />
-    </>
-  );
+export default function CeremonyMemorialStageRedirectPage() {
+  return <LegacyRedirect to={TARGET} />;
 }

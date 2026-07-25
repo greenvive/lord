@@ -83,9 +83,10 @@ export const outdoorStage: ServicePageContent = {
     },
   ],
   relatedLinks: [
-    { label: "축제·공연 솔루션", href: "/event-solutions/festival-performance" },
+    { label: "콘서트 솔루션", href: "/event-solutions/concert" },
+    { label: "대학교/고교/지역축제 솔루션", href: "/event-solutions/festival-school-local" },
     { label: "트러스/레이어", href: "/system-equipment-rental/truss-layer" },
-    { label: "체육대회 및 BJ 무대설치", href: "/event-solutions/sports-broadcast-stage" },
+    { label: "스포츠 솔루션", href: "/event-solutions/sports" },
     { label: "비용·견적 가이드", href: "/cost-estimate-guide" },
   ],
 };

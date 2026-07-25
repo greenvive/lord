@@ -80,6 +80,7 @@ export const trussLayer: ServicePageContent = {
   relatedLinks: [
     { label: "야외 무대", href: "/stage-rental-installation/outdoor-stage" },
     { label: "LED 전광판", href: "/system-equipment-rental/led-screen" },
-    { label: "축제·공연 솔루션", href: "/event-solutions/festival-performance" },
+    { label: "콘서트 솔루션", href: "/event-solutions/concert" },
+    { label: "대학교/고교/지역축제 솔루션", href: "/event-solutions/festival-school-local" },
   ],
 };

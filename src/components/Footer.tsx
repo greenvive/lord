@@ -14,7 +14,7 @@ export default function Footer() {
               alt="LORD"
               width={188}
               height={131}
-              className="h-12 w-auto"
+              className="h-12 w-auto grayscale"
             />
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-white/60">{site.description}</p>
           </div>

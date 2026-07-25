@@ -78,6 +78,6 @@ export const corporatePhotozone: ServicePageContent = {
   relatedLinks: [
     { label: "포토월·백월", href: "/photozone-rental-production/photowall-backwall" },
     { label: "기업행사 무대", href: "/stage-rental-installation/corporate-event-stage" },
-    { label: "기업행사 솔루션", href: "/event-solutions/corporate-event" },
+    { label: "행사별 솔루션 보기", href: "/event-solutions" },
   ],
 };

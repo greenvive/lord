@@ -1,30 +1,14 @@
 import type { Metadata } from "next";
-import ServicePageTemplate from "@/components/ServicePageTemplate";
-import JsonLdScript from "@/components/JsonLdScript";
-import { breadcrumbJsonLd, faqJsonLd, serviceJsonLd } from "@/lib/jsonld";
-import { sportsBroadcastStage as content } from "@/lib/content/sports-broadcast-stage";
+import LegacyRedirect from "@/components/LegacyRedirect";
+
+const TARGET = "/event-solutions/sports";
 
 export const metadata: Metadata = {
-  title: content.metaTitle.replace(" | LORD", ""),
-  description: content.metaDescription,
-  alternates: { canonical: `/event-solutions/${content.slug}` },
+  title: "스포츠 행사 무대 설치 솔루션으로 이동",
+  robots: { index: false, follow: true },
+  alternates: { canonical: TARGET },
 };
 
-export default function SportsBroadcastStagePage() {
-  return (
-    <>
-      <JsonLdScript
-        data={[
-          breadcrumbJsonLd(content.breadcrumb),
-          serviceJsonLd({
-            name: content.h1,
-            description: content.metaDescription,
-            url: `/event-solutions/${content.slug}`,
-          }),
-          faqJsonLd(content.faq),
-        ]}
-      />
-      <ServicePageTemplate content={content} />
-    </>
-  );
+export default function SportsBroadcastStageRedirectPage() {
+  return <LegacyRedirect to={TARGET} />;
 }

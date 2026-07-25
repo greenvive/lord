@@ -79,6 +79,6 @@ export const sound: ServicePageContent = {
   relatedLinks: [
     { label: "조명", href: "/system-equipment-rental/lighting" },
     { label: "야외 무대", href: "/stage-rental-installation/outdoor-stage" },
-    { label: "체육대회 및 BJ 무대설치 솔루션", href: "/event-solutions/sports-broadcast-stage" },
+    { label: "스포츠 솔루션", href: "/event-solutions/sports" },
   ],
 };

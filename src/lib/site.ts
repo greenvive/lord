@@ -49,11 +49,13 @@ export const nav = [
     label: "행사별 솔루션",
     href: "/event-solutions",
     children: [
-      { label: "준공식·기공식", href: "/event-solutions/groundbreaking-completion-ceremony", ready: true },
-      { label: "기념식·추도식", href: "/event-solutions/ceremony-memorial-stage", ready: true },
-      { label: "기업행사", href: "/event-solutions/corporate-event", ready: true },
-      { label: "축제·공연", href: "/event-solutions/festival-performance", ready: true },
-      { label: "체육대회 및 BJ 무대설치", href: "/event-solutions/sports-broadcast-stage", ready: true },
+      { label: "기념식/기공식", href: "/event-solutions/ceremony-groundbreaking", ready: true },
+      { label: "콘서트", href: "/event-solutions/concert", ready: true },
+      { label: "대학교/고교/지역축제", href: "/event-solutions/festival-school-local", ready: true },
+      { label: "스포츠", href: "/event-solutions/sports", ready: true },
+      { label: "팝업행사", href: "/event-solutions/popup-event", ready: true },
+      { label: "포토존", href: "/event-solutions/photozone", ready: true },
+      { label: "공사/제작", href: "/event-solutions/construction-production", ready: true },
     ],
   },
   {

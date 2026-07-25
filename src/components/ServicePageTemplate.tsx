@@ -43,6 +43,34 @@ export default function ServicePageTemplate({ content }: { content: ServicePageC
             </ul>
           </div>
 
+          {content.notableCases && content.notableCases.length > 0 && (
+            <div>
+              <SectionHeading>대표 사례</SectionHeading>
+              <div className="mt-6 overflow-x-auto rounded-2xl border border-black/10">
+                <table className="w-full min-w-[560px] text-left text-sm">
+                  <thead>
+                    <tr className="bg-lord-black text-white">
+                      <th scope="col" className="px-5 py-3 font-bold">일자</th>
+                      <th scope="col" className="px-5 py-3 font-bold">행사명</th>
+                      <th scope="col" className="px-5 py-3 font-bold">지역 / 장소</th>
+                      <th scope="col" className="px-5 py-3 font-bold">주최·주관</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {content.notableCases.map((row, index) => (
+                      <tr key={`${index}-${row.date}-${row.title}-${row.place}`} className={index % 2 === 0 ? "bg-lord-cream/60" : "bg-white"}>
+                        <td className="px-5 py-3 text-[#4a4a4a]">{row.date}</td>
+                        <td className="px-5 py-3 font-bold text-lord-black">{row.title}</td>
+                        <td className="px-5 py-3 text-[#4a4a4a]">{row.region} · {row.place}</td>
+                        <td className="px-5 py-3 text-[#4a4a4a]">{row.organizer}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
+
           <div>
             <SectionHeading>제공 범위</SectionHeading>
             <ul className="body-copy mt-6 list-disc space-y-2 pl-5">
@@ -92,7 +120,10 @@ export default function ServicePageTemplate({ content }: { content: ServicePageC
           <div>
             <SectionHeading>관련 포트폴리오</SectionHeading>
             <div className="mt-6 grid gap-6 sm:grid-cols-2">
-              {portfolioItems.slice(0, 2).map((item) => (
+              {(content.caseCategoryTags && content.caseCategoryTags.length > 0
+                ? portfolioItems.filter((item) => content.caseCategoryTags!.includes(item.category)).slice(0, 4)
+                : portfolioItems.slice(0, 2)
+              ).map((item) => (
                 <PortfolioCard key={item.slug} item={item} />
               ))}
             </div>

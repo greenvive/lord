@@ -80,7 +80,8 @@ export const festivalPerformanceStage: ServicePageContent = {
   ],
   relatedLinks: [
     { label: "야외 무대", href: "/stage-rental-installation/outdoor-stage" },
-    { label: "축제·공연 솔루션", href: "/event-solutions/festival-performance" },
+    { label: "콘서트 솔루션", href: "/event-solutions/concert" },
+    { label: "대학교/고교/지역축제 솔루션", href: "/event-solutions/festival-school-local" },
     { label: "트러스/레이어", href: "/system-equipment-rental/truss-layer" },
   ],
 };

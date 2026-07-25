@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { HubPageContent } from "@/lib/types";
 import PageHero from "@/components/PageHero";
 import ServiceCard from "@/components/ServiceCard";
+import SolutionCard from "@/components/SolutionCard";
 import FaqAccordion from "@/components/FaqAccordion";
 import CtaBanner from "@/components/CtaBanner";
 import { withBasePath } from "@/lib/base-path";
@@ -11,6 +12,8 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 }
 
 export default function HubPageTemplate({ content }: { content: HubPageContent }) {
+  const hasImageCards = content.children.some((child) => Boolean(child.image));
+
   return (
     <>
       <PageHero
@@ -22,17 +25,29 @@ export default function HubPageTemplate({ content }: { content: HubPageContent }
       />
 
       <section className="bg-lord-black px-5 pb-20">
-        <div className="mx-auto max-w-5xl">
-          <div className="grid gap-6 sm:grid-cols-2">
-            {content.children.map((child) => (
-              <ServiceCard
-                key={child.href}
-                title={child.label}
-                description={child.description}
-                href={child.href}
-                ready={child.ready}
-              />
-            ))}
+        <div className={hasImageCards ? "mx-auto max-w-6xl" : "mx-auto max-w-5xl"}>
+          <div className={hasImageCards ? "grid gap-6 sm:grid-cols-2 lg:grid-cols-4" : "grid gap-6 sm:grid-cols-2"}>
+            {content.children.map((child, index) =>
+              child.image ? (
+                <SolutionCard
+                  key={child.href}
+                  index={String(index + 1).padStart(2, "0")}
+                  title={child.label}
+                  description={child.description}
+                  href={child.href}
+                  image={withBasePath(child.image)}
+                  imageAlt={child.imageAlt ?? child.label}
+                />
+              ) : (
+                <ServiceCard
+                  key={child.href}
+                  title={child.label}
+                  description={child.description}
+                  href={child.href}
+                  ready={child.ready}
+                />
+              )
+            )}
           </div>
         </div>
       </section>

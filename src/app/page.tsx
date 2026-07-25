@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Button from "@/components/Button";
 // import ServiceCard from "@/components/ServiceCard";
+import SolutionCard from "@/components/SolutionCard";
 import PortfolioCard from "@/components/PortfolioCard";
 import FaqAccordion from "@/components/FaqAccordion";
 import CtaBanner from "@/components/CtaBanner";
@@ -32,11 +32,55 @@ export const metadata: Metadata = {
 };
 
 const eventSolutions = [
-  { label: "준공식·기공식", href: "/event-solutions/groundbreaking-completion-ceremony" },
-  { label: "기념식·추도식", href: "/event-solutions/ceremony-memorial-stage" },
-  { label: "기업행사", href: "/event-solutions/corporate-event" },
-  { label: "축제·공연", href: "/event-solutions/festival-performance" },
-  { label: "체육대회 및 BJ 무대설치", href: "/event-solutions/sports-broadcast-stage" },
+  {
+    label: "기념식/기공식",
+    href: "/event-solutions/ceremony-groundbreaking",
+    description: "의전·개관·추도·착공 행사에 맞춘 무대·백월·포토존 솔루션",
+    image: "/images/hero/10-ceremony-stage-led-screen.jpg",
+    imageAlt: "기념식·기공식 무대 LED 스크린 설치 현장",
+  },
+  {
+    label: "콘서트",
+    href: "/event-solutions/concert",
+    description: "공연 무대·음향·조명·LED를 통합 구성하는 콘서트 솔루션",
+    image: "/images/hero/02-outdoor-amphitheater-night-concert.jpg",
+    imageAlt: "야외 원형극장 야간 콘서트 무대와 LED 스크린 설치 현장",
+  },
+  {
+    label: "대학교/고교/지역축제",
+    href: "/event-solutions/festival-school-local",
+    description: "학교·지역 축제 무대와 포토존을 함께 구성하는 솔루션",
+    image: "/images/hero/01-outdoor-festival-stage-lake-park.jpg",
+    imageAlt: "광교호수공원 야외 지역축제 무대 설치 현장",
+  },
+  {
+    label: "스포츠",
+    href: "/event-solutions/sports",
+    description: "대회·시상식·스폰서존을 함께 고려한 스포츠 행사 솔루션",
+    image: "/images/hero/07-corporate-event-branded-backdrop.jpg",
+    imageAlt: "스포츠 대회 시상식 무대와 스폰서 백월 설치 현장",
+  },
+  {
+    label: "팝업행사",
+    href: "/event-solutions/popup-event",
+    description: "브랜드 체험존·야외 팝업 공간을 위한 설치 솔루션",
+    image: "/images/hero/06-custom-photozone-backdrop-gate.jpg",
+    imageAlt: "행사장 맞춤 제작 팝업 포토존 백드롭 설치 현장",
+  },
+  {
+    label: "포토존",
+    href: "/event-solutions/photozone",
+    description: "행사용 포토존·포토월 제작·렌탈 솔루션",
+    image: "/images/hero/09-illustrated-photozone-backdrop.jpg",
+    imageAlt: "포토존 백드롭과 레드카펫 설치 현장",
+  },
+  {
+    label: "공사/제작",
+    href: "/event-solutions/construction-production",
+    description: "행사장 가벽·목공 구조물 맞춤 제작 솔루션",
+    image: "/images/hero/06-custom-photozone-backdrop-gate.jpg",
+    imageAlt: "행사장 맞춤 제작 가벽·목공 구조물 설치 현장",
+  },
 ];
 
 const strengths = [
@@ -142,15 +186,17 @@ export default function Home() {
           <p className="mx-auto mt-3 max-w-2xl text-center text-sm text-[#4a4a4a]">
             서비스명보다 행사명으로 찾는 경우가 많습니다. 행사 목적에 맞는 솔루션을 바로 확인하세요.
           </p>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-            {eventSolutions.map((item) => (
-              <Link
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {eventSolutions.map((item, index) => (
+              <SolutionCard
                 key={item.href}
+                index={String(index + 1).padStart(2, "0")}
+                title={item.label}
+                description={item.description}
                 href={item.href}
-                className="rounded-2xl border border-black/10 bg-white px-5 py-6 text-center text-sm font-bold text-lord-black transition hover:border-lord-orange hover:text-lord-orange"
-              >
-                {item.label}
-              </Link>
+                image={withBasePath(item.image)}
+                imageAlt={item.imageAlt}
+              />
             ))}
           </div>
         </div>
