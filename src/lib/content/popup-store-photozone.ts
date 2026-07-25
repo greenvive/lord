@@ -23,6 +23,7 @@ export const popupStorePhotozone: ServicePageContent = {
     { label: "설치 지역", value: "수도권 중심, 전국 출장 가능" },
   ],
   eventFit: ["팝업스토어", "체험형 행사", "단기 브랜드 공간"],
+  caseCategoryTags: ["팝업행사"],
   scope: [
     "공간 면적에 맞춘 포토존 디자인",
     "방문자 동선 설계",

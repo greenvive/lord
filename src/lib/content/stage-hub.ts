@@ -19,7 +19,7 @@ export const stageHub: HubPageContent = {
       label: "실내 무대",
       href: "/stage-rental-installation/indoor-stage",
       description: "호텔·강당·컨벤션 등 실내 행사장 천고·동선·전기 조건에 맞춘 무대 설치",
-      ready: false,
+      ready: true,
     },
     {
       label: "야외 무대",

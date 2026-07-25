@@ -23,6 +23,7 @@ export const corporateEventStage: ServicePageContent = {
     { label: "설치 지역", value: "수도권 중심, 전국 출장 가능" },
   ],
   eventFit: ["창립기념식", "시상식", "비전선포식", "제품 발표회", "컨퍼런스", "사내행사"],
+  caseCategoryTags: ["기념식"],
   scope: [
     "무대 바닥·계단·난간·백월 설치",
     "브랜드 로고 적용 백월·포토월 디자인 및 제작",

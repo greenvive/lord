@@ -23,6 +23,7 @@ export const outdoorStage: ServicePageContent = {
     { label: "설치 지역", value: "수도권 중심, 전국 출장 가능" },
   ],
   eventFit: ["지역축제", "대학축제", "야외 공공행사", "야외 기념식", "체육대회 개회·시상식"],
+  casePlaceTag: "야외",
   scope: [
     "무대 바닥·계단·난간·트러스 설치",
     "음향·조명·LED 통합 구성",

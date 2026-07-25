@@ -23,6 +23,7 @@ export const indoorStage: ServicePageContent = {
     { label: "설치 지역", value: "수도권 중심, 전국 출장 가능" },
   ],
   eventFit: ["세미나", "시상식", "기업행사", "컨퍼런스", "기념식", "발표회"],
+  casePlaceTag: "실내",
   scope: [
     "행사장 천고·반입 동선 사전 확인",
     "무대 바닥·계단·백월 설치",

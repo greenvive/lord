@@ -23,6 +23,7 @@ export const festivalPerformanceStage: ServicePageContent = {
     { label: "설치 지역", value: "수도권 중심, 전국 출장 가능" },
   ],
   eventFit: ["지역축제", "대학축제", "콘서트", "버스킹", "야외 공연"],
+  caseCategoryTags: ["콘서트", "대학교축제", "고교축제", "지역축제"],
   scope: [
     "관객 규모에 맞춘 무대 규격 설계",
     "출연자 동선과 백스테이지 공간 구성",

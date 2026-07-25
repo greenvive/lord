@@ -24,14 +24,6 @@ export const festivalSchoolLocal: ServicePageContent = {
   ],
   eventFit: ["대학교축제", "고교축제", "지역축제"],
   caseCategoryTags: ["대학교축제", "고교축제", "지역축제"],
-  notableCases: [
-    { date: "2026-05-26", category: "대학교축제", title: "성결대축제", region: "안양시", place: "야외", organizer: "성결대학교" },
-    { date: "2026-05-22", category: "지역축제", title: "오산장미빛축제", region: "오산시", place: "야외", organizer: "오산시" },
-    { date: "2026-05-12", category: "대학교축제", title: "덕성여대축제", region: "서울시", place: "야외", organizer: "덕성여대" },
-    { date: "2026-03-24", category: "대학교축제", title: "성균관대동아리축제", region: "서울시", place: "야외", organizer: "성균관대" },
-    { date: "2025-11-20", category: "고교축제", title: "함현고축제", region: "시흥시", place: "실내", organizer: "함현고" },
-    { date: "2025-11-14", category: "대학교축제", title: "한양대빅버드페스티벌", region: "서울시", place: "실내", organizer: "한양대" },
-  ],
   scope: [
     "축제 무대 설치",
     "음향·조명 구성",

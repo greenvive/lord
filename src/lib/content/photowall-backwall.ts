@@ -23,6 +23,7 @@ export const photowallBackwall: ServicePageContent = {
     { label: "설치 지역", value: "수도권 중심, 전국 출장 가능" },
   ],
   eventFit: ["시상식", "기자간담회", "인터뷰 촬영", "브랜드 런칭 행사"],
+  caseCategoryTags: ["포토존"],
   scope: [
     "포토월·백월 디자인 시안 제작",
     "로고 반복 패턴 또는 단일 디자인 출력",

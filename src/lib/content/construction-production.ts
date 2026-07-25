@@ -24,10 +24,6 @@ export const constructionProduction: ServicePageContent = {
   ],
   eventFit: ["문화공간 리뉴얼", "전시 가벽 공사", "행사장 임시 구조물 제작"],
   caseCategoryTags: ["공사/제작"],
-  notableCases: [
-    { date: "2025-12-29", category: "공사/제작", title: "경기아트센터스윙도어제작", region: "수원시", place: "실내", organizer: "수원시" },
-    { date: "2025-12-03", category: "공사/제작", title: "수원문화재단가벽공사", region: "수원시", place: "실내", organizer: "수원문화재단" },
-  ],
   scope: [
     "가벽 제작·시공",
     "스윙도어 제작",

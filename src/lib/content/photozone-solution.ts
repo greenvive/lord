@@ -24,10 +24,6 @@ export const photozoneSolution: ServicePageContent = {
   ],
   eventFit: ["학교축제", "동아리축제", "기업행사", "브랜드 행사"],
   caseCategoryTags: ["포토존"],
-  notableCases: [
-    { date: "2026-05-12", category: "포토존", title: "덕성여대축제", region: "서울시", place: "야외", organizer: "덕성여대" },
-    { date: "2026-03-24", category: "포토존", title: "성균관대동아리축제", region: "서울시", place: "야외", organizer: "성균관대" },
-  ],
   scope: [
     "포토월 제작",
     "백월 제작",

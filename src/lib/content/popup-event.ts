@@ -24,9 +24,6 @@ export const popupEvent: ServicePageContent = {
   ],
   eventFit: ["브랜드 팝업", "기념 테마파크", "체험존 행사"],
   caseCategoryTags: ["팝업행사"],
-  notableCases: [
-    { date: "2026-06-26", category: "팝업행사", title: "메모리얼 테마파크", region: "수원시", place: "야외", organizer: "경기남부보훈지청" },
-  ],
   scope: [
     "브랜드 포토존 구성",
     "체험존 구조물 설치",

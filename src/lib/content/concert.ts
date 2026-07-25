@@ -24,12 +24,6 @@ export const concert: ServicePageContent = {
   ],
   eventFit: ["야외공연", "기념공연", "송구영신 음악회", "콘서트", "버스킹"],
   caseCategoryTags: ["콘서트"],
-  notableCases: [
-    { date: "2026-06-13", category: "콘서트", title: "헤리티지콘서트", region: "수원시", place: "야외", organizer: "수원시/OBS" },
-    { date: "2026-05-19", category: "콘서트", title: "챔피온스축하공연", region: "수원시", place: "야외", organizer: "수원시" },
-    { date: "2025-12-30", category: "콘서트", title: "2025송구영신음악회", region: "수원시", place: "실외", organizer: "수원시" },
-    { date: "2025-11-17", category: "콘서트", title: "맨위드어미션콘서트", region: "서울시", place: "실내", organizer: "YES24 LIVE HALL" },
-  ],
   scope: [
     "공연 무대 설치",
     "음향 시스템 구성",

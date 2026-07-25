@@ -24,18 +24,6 @@ export const ceremonyGroundbreaking: ServicePageContent = {
   ],
   eventFit: ["기념식", "추도식", "개관식", "학위수여식", "기공식", "착공식"],
   caseCategoryTags: ["기념식", "기공식"],
-  notableCases: [
-    { date: "2026-06-30", category: "기념식", title: "유엔군초전기념 추도식", region: "오산시", place: "야외", organizer: "오산시" },
-    { date: "2026-03-18", category: "기념식", title: "실내배드민턴장 개관식", region: "수원시", place: "실내", organizer: "수원시" },
-    { date: "2026-02-26", category: "기념식", title: "덕성여대축제 입학식", region: "서울시", place: "야외", organizer: "덕성여대" },
-    { date: "2026-02-26", category: "기념식", title: "덕성여대입학식", region: "서울시", place: "실내", organizer: "덕성여대" },
-    { date: "2026-02-19", category: "기념식", title: "서강대학위수여식", region: "서울시", place: "야외", organizer: "서강대" },
-    { date: "2026-02-19", category: "기념식", title: "서강대학위수여식", region: "서울시", place: "실내", organizer: "서강대" },
-    { date: "2026-01-27", category: "기공식", title: "금곡동도서관기공식", region: "수원시", place: "실외", organizer: "수원시" },
-    { date: "2025-12-17", category: "기념식", title: "우리금융그룹 ABL 합병식", region: "용인시", place: "실내", organizer: "우리금융그룹" },
-    { date: "2025-11-18", category: "기념식", title: "수원초중학생국제교류작품전", region: "수원시", place: "실내", organizer: "수원시립만석전시관" },
-    { date: "2025-11-03", category: "기념식", title: "경기도외국인우수인재컨퍼런스", region: "수원시", place: "실내", organizer: "경기도" },
-  ],
   scope: [
     "의전 무대 설치",
     "백월·현수막 구성",

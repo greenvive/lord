@@ -28,15 +28,6 @@ export interface RelatedLink {
   href: string;
 }
 
-export interface CaseStudyRow {
-  date: string;
-  category: string;
-  title: string;
-  region: string;
-  place: string;
-  organizer: string;
-}
-
 export interface ServicePageContent {
   slug: string;
   breadcrumb: Breadcrumb[];
@@ -48,9 +39,10 @@ export interface ServicePageContent {
   heroImage: string;
   summaryTable: SummaryRow[];
   eventFit: string[];
-  /** 이 페이지가 매칭할 portfolio.category 값 목록 (관련 포트폴리오 필터링 + 대표 사례 표에 사용). 없으면 기존 방식(배열 앞 2건)으로 표시 */
+  /** 이 페이지가 매칭할 portfolio.category 값 목록 (관련 포트폴리오 필터링에 사용). 없으면 기존 방식(배열 앞 2건)으로 표시 */
   caseCategoryTags?: string[];
-  notableCases?: CaseStudyRow[];
+  /** category 태그로 매칭되는 사례가 없는(또는 실내/야외처럼 장소 축이 더 맞는) 페이지용 대체 필터 */
+  casePlaceTag?: "실내" | "야외";
   scope: string[];
   configExamples: ConfigExample[];
   process: string[];

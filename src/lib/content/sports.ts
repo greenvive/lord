@@ -24,12 +24,6 @@ export const sports: ServicePageContent = {
   ],
   eventFit: ["테니스대회", "당구대회", "스포츠 세미나", "체육대회", "시상식"],
   caseCategoryTags: ["스포츠"],
-  notableCases: [
-    { date: "2026-04-09", category: "스포츠", title: "부산오픈테니스", region: "부산시", place: "야외", organizer: "부산시/RENAULT" },
-    { date: "2026-03-23", category: "스포츠", title: "서울오픈3쿠션당구대회", region: "서울시", place: "실내", organizer: "수협은행" },
-    { date: "2026-02-01", category: "스포츠", title: "데이비스컵테니스대회", region: "부산시", place: "실내", organizer: "부산시/하나증권" },
-    { date: "2025-11-24", category: "스포츠", title: "스포츠과학국제세미나", region: "용인시", place: "실내", organizer: "용인시" },
-  ],
   scope: [
     "시상식 무대 설치",
     "스폰서 백월 구성",
